@@ -2,29 +2,41 @@
 # based on a user's inputs
 
 import math
-
-# A function to check if user inputs are valid
-def number_valid(number):
-    if number == "":
-        print("You did not enter a value.")
-        output = float(input("Please enter a desired length for a cube: "))
-        number_valid(output)
-    elif type(number) != (int | float):
-        print("You did not enter a valid number. Please try again.")
-        output = float(input("Please enter a desired length for a cube: "))
-        number_valid(output)
-    else:
-        return output
-
 # Since the cube with be equal on all sides, only one measurement is needed.
 # The formula for the volume of a cube is length(width)(height)
-cube_length = number_valid(number = (input("Please enter a desired length for a cube: ")))
-
-
+while True:
+    try:
+        cube_length = float(input("Please enter a desired length for a cube: "))
+    except ValueError:
+        print("You have entered an unvalid value.")
+        continue
+    if cube_length == (int | float):
+        continue
+    else:
+        break
 
 #To find the volume of a cone, the formula is: (radius^2(height/3)(pi))
-cone_height = float(input("Please enter a desired height for the cone: "))
-cone_radius = float(input("Please enter a desired radius for the cone: "))
+while True:
+    try:
+        cone_height = float(input("Please enter a desired height for the cone: "))
+    except ValueError:
+        print("You have entered an unvalid value.")
+        continue
+    if cone_height == (int | float):
+        continue
+    else:
+        break
+
+while True:
+    try:
+        cone_radius = float(input("Please enter a desired radius for the cone: "))
+    except ValueError:
+        print("You have entered an unvalid value.")
+        continue
+    if cone_radius == (int | float):
+        continue
+    else:
+        break   
 
 # The ** syntax allows for exponent math. Similarly math.pow(x, y) 
 # where x is the number being raised to y power.
